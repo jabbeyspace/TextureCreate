@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <ProjectGuid>{F1C1BAF6-89C4-417E-81DA-83A2EF9A5086}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net35</TargetFramework>
+    <StartupObject>TextureCreate.Program</StartupObject>
+    <ApplicationIcon>resources\LITENING.ICO</ApplicationIcon>
+    <AssemblyTitle>TextureCreateForm</AssemblyTitle>
+    <Product>TextureCreateForm</Product>
+    <Copyright>Copyright ©  2014</Copyright>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="customLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="customUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="findReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="findReplaceForm.Designer.cs">
+      <DependentUpon>findReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="nameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="nameForm.Designer.cs">
+      <DependentUpon>nameForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="findReplaceForm.resx">
+      <DependentUpon>findReplaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="nameForm.resx">
+      <DependentUpon>nameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="levelParameterControl.resx">
+      <DependentUpon>levelParameterControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Update="levelParameterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="levelParameterControl.Designer.cs">
+      <DependentUpon>levelParameterControl.cs</DependentUpon>
+    </Compile>
+    <None Include="tc collections\cosmic top.tcc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\formView1.png" />
+    <Content Include="images\formView2.png" />
+    <Content Include="images\group1.png" />
+    <Content Include="images\group2.png" />
+    <Content Include="images\group3.png" />
+    <Content Include="resources\LITENING.ICO" />
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(ProjectDir)tc collections&quot; &quot;$(TargetDir)tc collections&quot; /s /i /y" />
+  </Target>
+</Project>
