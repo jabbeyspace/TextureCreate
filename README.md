@@ -30,7 +30,7 @@ In order to build and run the solution, a machine running Windows 10 or 11 is ad
 1. Open Visual Studio and click `Clone a repository` from the side menu or from the `Git` menu
 2. Enter `https://github.com/jabbeyspace/TextureCreate.git` for the repository location
 3. Select a path to an empty folder to save it to and click the `Clone` button
-4. Wait for the repository to finish downloading and for Visual Studio to open the `TextureCreate.sln' automatically
+4. Wait for the repository to finish downloading and for Visual Studio to open the `TextureCreate.sln` automatically
 4. Go to the `Build` menu and select `Build Solution` or press `Ctrl + Shift + B`
 
 A new `bin` folder and a .NET subfolder such as `net35` should now contain `TextureCreate.exe` within the path specified above.  Accompanying the `.exe` file will be a `tc collections` folder containing a sample texture create collection file named `cosmictop.tcc`.  All the texture images presented are defined by this `.tcc` file.  If you make changes to these textures, you can always restore the sample `.tcc` file simply by going to the `Build` menu and selecting `Rebuild Solution`.
